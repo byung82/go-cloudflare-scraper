@@ -12,6 +12,7 @@ import (
 	"regexp"
 	"strconv"
 	"time"
+        "fmt"
 
 	"github.com/robertkrimen/otto"
 )
@@ -150,7 +151,11 @@ var jsReplace2Regexp = regexp.MustCompile(`\s{3,}[a-z](?: = |\.).+`)
 var jsReplace3Regexp = regexp.MustCompile(`[\n\\']`)
 
 func (t Transport) extractJS(body string) (string, error) {
+        fmt.Println(body)
+
 	matches := jsRegexp.FindStringSubmatch(body)
+
+          
 	if len(matches) == 0 {
 		return "", errors.New("No matching javascript found")
 	}
