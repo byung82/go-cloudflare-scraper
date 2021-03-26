@@ -12,7 +12,6 @@ import (
 	"regexp"
 	"strconv"
 	"time"
-        "fmt"
 
 	"github.com/robertkrimen/otto"
 )
